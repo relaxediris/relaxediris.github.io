@@ -1,0 +1,26 @@
+---
+title: "Categories"
+layout: default
+---
+
+<h2>Categories</h2>
+
+{% for category in site.categories %}
+{% assign name = category[0] %}
+<p>
+  <a href="{{site.url}}/categories#{{name}}">
+  {{ name }}
+  </a>
+</p>
+{% endfor %}
+
+<h2>Posts</h2>
+{% for post in site.posts %}
+  {% if post.title != null %}
+  <a href="{{post.url}}">
+    <p>
+      {{post.title}}
+    </p>
+  </a>
+  {% endif %}
+{% endfor %}
